@@ -12,7 +12,7 @@
     <application
         android:label="@string/app_name"
         android:icon="@drawable/crosswalk"
-        android:theme="@android:style/Theme.Holo.Light"
+        android:theme="@style/AppTheme"
         android:allowBackup="true" >
 
         <meta-data android:name="xwalk_apk_url" android:value="http://10.0.2.2/XWalkRuntimeLib.apk" />
