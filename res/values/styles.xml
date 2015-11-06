@@ -1,6 +1,4 @@
 <resources>
-    <color name="white">#FFFFFFFF</color>
-    <color name="red">#FFFF0000</color>
     <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowBackground">@color/white</item>

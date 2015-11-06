@@ -33,7 +33,7 @@ public class XWalkViewActivity extends Activity {
 
         mXWalkView.setUIClient(new TestXWalkUIClient(mXWalkView, this, mRootView, mViewHistory));
         mXWalkView.setResourceClient(new TestXWalkResourceClient(mXWalkView));
-        mXWalkView.load("file:///android_asset/create_window_1.html", null);
+        mXWalkView.load("file:///android_asset/color.html", null);
     }
 
     @Override

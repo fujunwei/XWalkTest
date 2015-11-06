@@ -28,6 +28,18 @@ public class TestXWalkUIClient extends XWalkUIClient {
     }
 
     @Override
+    public void onPageLoadStarted(XWalkView view, String url) {
+        Log.d(TAG, "onPageLoadStarted: " + url);
+        super.onPageLoadStarted(view, url);
+    }
+
+    @Override
+    public void onPageLoadStopped(XWalkView view, String url, LoadStatus status) {
+        Log.d(TAG, "onPageLoadStopped: " + status);
+        super.onPageLoadStopped(view, url, status);
+    }
+
+    @Override
     public void onJavascriptCloseWindow(XWalkView view) {
         Log.d(TAG, "onJavascriptCloseWindow");
         super.onJavascriptCloseWindow(view);
