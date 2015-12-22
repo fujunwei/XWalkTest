@@ -11,6 +11,8 @@ import android.webkit.WebView;
 import java.util.LinkedList;
 
 public class WebViewActivity extends Activity {
+    private static final String TAG = "XWalkTest";
+
     LinkedList<WebView> mViewHistory = new LinkedList<WebView>();
     ViewGroup mRootView;
     WebView mWebView;
@@ -31,6 +33,8 @@ public class WebViewActivity extends Activity {
         mWebView.setWebChromeClient(new TestWebChromeClient(this, mRootView, mViewHistory));
         mWebView.setWebViewClient(new TestWebViewClient());
 
+        TestWebView testView = (TestWebView)mWebView;
+        testView.addJavascriptInterface();
         mWebView.loadUrl("file:///android_asset/create_window_1.html");
     }
 

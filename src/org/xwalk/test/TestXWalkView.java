@@ -5,10 +5,20 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+import android.widget.Toast;
+
+import org.xwalk.core.JavascriptInterface;
 import org.xwalk.core.XWalkView;
 
 public class TestXWalkView extends XWalkView {
     private static final String TAG = "XWalkActivity";
+
+    private class TestJavascriptInterface {
+        @JavascriptInterface
+        public void showText() {
+            Toast.makeText(getContext(), "TestJavascriptInterface", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     public TestXWalkView(Context context) {
         super(context);
@@ -16,6 +26,10 @@ public class TestXWalkView extends XWalkView {
 
     public TestXWalkView(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    public void addJavascriptInterface() {
+        addJavascriptInterface(new TestJavascriptInterface(), "testJavascriptObject");
     }
 
     @Override

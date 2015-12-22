@@ -12,7 +12,7 @@ import org.xwalk.core.XWalkView;
 import org.xwalk.core.XWalkJavascriptResult;
 
 public class TestXWalkUIClient extends XWalkUIClient {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     Activity mActivity;
     ViewGroup mRootView;
@@ -53,8 +53,7 @@ public class TestXWalkUIClient extends XWalkUIClient {
     @Override
     public boolean onJavascriptModalDialog(XWalkView view, JavascriptMessageType type,
             String url, String message, String defaultValue, XWalkJavascriptResult result) {
-        Log.d(TAG, "onJavascriptModalDialog: " + type + "," + url + "," + message
-                + "," + defaultValue + "," + result);
+        Log.d(TAG, "onJavascriptModalDialog: " + type + "," + url + "," + message + "," + result);
         return super.onJavascriptModalDialog(view, type, url, message, defaultValue, result);
     }
 
@@ -77,6 +76,7 @@ public class TestXWalkUIClient extends XWalkUIClient {
 
         newView.setUIClient(new TestXWalkUIClient(newView, mActivity, mRootView, mViewHistory));
         newView.setResourceClient(new TestXWalkResourceClient(newView));
+        newView.addJavascriptInterface();
         return true;
     }
 }

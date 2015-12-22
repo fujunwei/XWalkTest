@@ -5,10 +5,19 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 public class TestWebView extends WebView {
     private static final String TAG = "XWalkActivity";
+
+    private class TestJavascriptInterface {
+        @JavascriptInterface
+        public void showText() {
+            Toast.makeText(getContext(), "TestJavascriptInterface", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     public TestWebView(Context context) {
         super(context);
@@ -16,6 +25,10 @@ public class TestWebView extends WebView {
 
     public TestWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    public void addJavascriptInterface() {
+        addJavascriptInterface(new TestJavascriptInterface(), "testJavascriptObject");
     }
 
     @Override

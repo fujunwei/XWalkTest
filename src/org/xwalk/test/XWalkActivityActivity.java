@@ -14,7 +14,7 @@ import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkView;
 
 public class XWalkActivityActivity extends XWalkActivity {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     LinkedList<XWalkView> mViewHistory = new LinkedList<XWalkView>();
     ViewGroup mRootView;
@@ -38,6 +38,8 @@ public class XWalkActivityActivity extends XWalkActivity {
 
     @Override
     public void onXWalkReady() {
+        TestXWalkView testView = (TestXWalkView)mXWalkView;
+        testView.addJavascriptInterface();
         mXWalkView.load("file:///android_asset/create_window_1.html", null);
     }
 

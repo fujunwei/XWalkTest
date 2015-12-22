@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Message;
 import android.util.Log;
 import android.view.ViewGroup;
+import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -12,7 +13,7 @@ import android.webkit.WebView.WebViewTransport;
 import java.util.LinkedList;
 
 public class TestWebChromeClient extends WebChromeClient {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     Activity mActivity;
     ViewGroup mRootView;
@@ -33,11 +34,7 @@ public class TestWebChromeClient extends WebChromeClient {
     public boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture,
             Message resultMsg) {
         Log.d(TAG, "onCreateWindow: " + isDialog + "," + isUserGesture);
-        WebView newView = new TestWebView(mActivity);
-
-        WebViewTransport transport = (WebViewTransport) resultMsg.obj;
-        transport.setWebView(newView);
-        resultMsg.sendToTarget();
+        TestWebView newView = new TestWebView(mActivity);
 
         mRootView.removeView(mViewHistory.getLast());
         mRootView.addView(newView);
@@ -49,6 +46,18 @@ public class TestWebChromeClient extends WebChromeClient {
 
         newView.setWebChromeClient(new TestWebChromeClient(mActivity, mRootView, mViewHistory));
         newView.setWebViewClient(new TestWebViewClient());
+        newView.addJavascriptInterface();
+
+        WebViewTransport transport = (WebViewTransport) resultMsg.obj;
+        transport.setWebView(newView);
+        resultMsg.sendToTarget();
+
+        return true;
+    }
+
+    @Override
+    public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+        Log.d(TAG, "onJsAlert: " + url + "," + message + "," + result);
         return true;
     }
 }
