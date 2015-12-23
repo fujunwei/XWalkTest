@@ -16,7 +16,7 @@ import org.xwalk.core.XWalkView;
 
 public class XWalkInitializerActivity extends Activity
         implements XWalkInitializer.XWalkInitListener, XWalkUpdater.XWalkUpdateListener {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     XWalkInitializer mXWalkInitializer;
     XWalkUpdater mXWalkUpdater;

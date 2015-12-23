@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 
 public class ListViewActivity extends Activity {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,7 +5,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class TestWebViewClient extends WebViewClient {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {

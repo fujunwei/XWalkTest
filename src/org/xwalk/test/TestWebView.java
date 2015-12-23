@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 public class TestWebView extends WebView {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     private class TestJavascriptInterface {
         @JavascriptInterface
@@ -42,11 +42,10 @@ public class TestWebView extends WebView {
     protected boolean overScrollBy(int deltaX, int deltaY, int scrollX, int scrollY,
             int scrollRangeX, int scrollRangeY, int maxOverScrollX, int maxOverScrollY,
             boolean isTouchEvent){
-        Log.d(TAG, "overScrollBy: " + deltaX + "," + deltaY + "," + scrollX + "," + scrollY
-                + "," + scrollRangeX + "," + scrollRangeY + "," + maxOverScrollX + "," + maxOverScrollY
-                + "," + isTouchEvent);
-        return super.overScrollBy(deltaX, deltaY, scrollX, scrollY,
-                scrollRangeX, scrollRangeY, maxOverScrollX, maxOverScrollX, isTouchEvent);
+        Log.d(TAG, "overScrollBy: " + deltaX + "," + deltaY + "," + scrollX + "," + scrollY + "," + scrollRangeX
+                + "," + scrollRangeY + "," + maxOverScrollX + "," + maxOverScrollY + "," + isTouchEvent);
+        return super.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY,
+                maxOverScrollX, maxOverScrollX, isTouchEvent);
     }
 
     @Override

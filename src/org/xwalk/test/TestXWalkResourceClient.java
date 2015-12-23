@@ -6,7 +6,7 @@ import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkView;
 
 public class TestXWalkResourceClient extends XWalkResourceClient {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     public TestXWalkResourceClient(XWalkView xwalkView) {
         super(xwalkView);

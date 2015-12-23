@@ -13,7 +13,7 @@ import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkView;
 
 public class XWalkViewActivity extends Activity {
-    private static final String TAG = "XWalkActivity";
+    private static final String TAG = "XWalkTest";
 
     LinkedList<XWalkView> mViewHistory = new LinkedList<XWalkView>();
     ViewGroup mRootView;
