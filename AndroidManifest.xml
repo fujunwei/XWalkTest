@@ -10,12 +10,15 @@
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 
     <application
+        android:name="org.xwalk.test.XWalkApplication"
         android:label="@string/app_name"
         android:icon="@drawable/crosswalk"
         android:theme="@style/AppTheme"
         android:allowBackup="true" >
 
-        <meta-data android:name="xwalk_apk_url" android:value="http://10.0.2.2/XWalkRuntimeLib.apk" />
+        <!--meta-data android:name="xwalk_apk_url" android:value="http://10.0.2.2/XWalkRuntimeLib.apk" />
+        <meta-data android:name="xwalk_enable_download_mode" android:value="enable"/>
+        <meta-data android:name="xwalk_verify" android:value="disable"/-->
 
         <activity
             android:name="org.xwalk.test.MainActivity"
